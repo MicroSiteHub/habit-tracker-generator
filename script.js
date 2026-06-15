@@ -5,7 +5,7 @@ document.getElementById("downloadBtn").addEventListener("click", downloadPDF);
 
 function generateTracker() {
   const habitCount = parseInt(document.getElementById("habitCount").value, 10);
-  const weekCount = parseInt(document.getElementById("weekCount").value, 10);
+  const weekCount = habitCount <= 6 ? 3 : habitCount <= 12 ? 2 : 1; // auto-adjust weeks based on habit count
 
   const preview = document.getElementById("previewArea");
   preview.innerHTML = "";
@@ -22,7 +22,7 @@ function generateTracker() {
 
   const dateBox = document.createElement("div");
   dateBox.className = "date-box";
-  dateBox.textContent = `${weekCount} Week Layout`;
+  dateBox.textContent = `Date: ____________________`;
 
   header.appendChild(title);
   header.appendChild(dateBox);
@@ -43,13 +43,13 @@ function generateTracker() {
 
     const habitHeader = document.createElement("th");
     habitHeader.textContent = "Habit";
-    habitHeader.className = "time";
+    habitHeader.className = "header";
     headerRow.appendChild(habitHeader);
 
     days.forEach((day) => {
       const th = document.createElement("th");
       th.textContent = day;
-      th.className = "time";
+      th.className = "header";
       headerRow.appendChild(th);
     });
 
@@ -66,8 +66,11 @@ function generateTracker() {
 
       days.forEach(() => {
         const cell = document.createElement("td");
-        cell.className = "habit-checkbox";
+        cell.className = "habit-day-cell";
         row.appendChild(cell);
+        const checkbox = document.createElement("div");
+        checkbox.className = "habit-checkbox";
+        cell.appendChild(checkbox);
       });
 
       table.appendChild(row);
@@ -75,6 +78,15 @@ function generateTracker() {
 
     page.appendChild(table);
   }
+
+  // Notes section
+  const notesHeader = document.createElement("h2");
+  notesHeader.textContent = "Notes";
+  page.appendChild(notesHeader);
+
+  const notesBox = document.createElement("div");
+  notesBox.className = "notes-box";
+  page.appendChild(notesBox);
 
   preview.appendChild(page);
   document.getElementById("downloadBtn").classList.remove("hidden");
@@ -84,5 +96,22 @@ function downloadPDF() {
   const preview = document.getElementById("previewArea");
   const page = preview.querySelector(".planner-page");
 
-  html2pdf().from(page).save("habit-tracker.pdf");
+  const opt = {
+    margin: 0, // absolutely required
+    filename: "habit-tracker.pdf",
+    image: { type: "jpeg", quality: 1 },
+    html2canvas: {
+      scale: 2, // 2 is enough; 3 sometimes causes overflow
+      useCORS: true,
+      scrollX: 0,
+      scrollY: 0,
+    },
+    jsPDF: {
+      unit: "in",
+      format: "letter",
+      orientation: "portrait",
+    },
+  };
+
+  html2pdf().set(opt).from(page).save();
 }
