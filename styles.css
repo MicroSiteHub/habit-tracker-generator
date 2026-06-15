@@ -163,6 +163,19 @@ h2 {
   margin-top: 10px;
 }
 
+.habit-name-cell {
+  border: 1px solid #ccc;
+  width: 140px;
+  padding: 4px;
+  font-size: 14px;
+}
+
+.habit-checkbox {
+  border: 1px solid #666;
+  width: 20px;
+  height: 20px;
+}
+
 .related-tools {
   margin-top: 40px;
   padding: 20px;
