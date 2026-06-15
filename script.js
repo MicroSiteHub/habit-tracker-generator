@@ -28,52 +28,55 @@ function generateTracker() {
   header.appendChild(dateBox);
   page.appendChild(header);
 
-  // Table
-  const table = document.createElement("table");
-  table.className = "schedule-table";
-
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  const totalDays = days.length * weekCount;
 
-  // Header row
-  const headerRow = document.createElement("tr");
-  const habitHeader = document.createElement("th");
-  habitHeader.textContent = "Habit";
-  habitHeader.className = "time";
-  headerRow.appendChild(habitHeader);
+  for (let w = 1; w <= weekCount; w++) {
+    const weekLabel = document.createElement("h2");
+    weekLabel.textContent = `Week ${w}`;
+    page.appendChild(weekLabel);
 
-  for (let w = 0; w < weekCount; w++) {
+    const table = document.createElement("table");
+    table.className = "schedule-table";
+
+    // Header row
+    const headerRow = document.createElement("tr");
+
+    const habitHeader = document.createElement("th");
+    habitHeader.textContent = "Habit";
+    habitHeader.className = "time";
+    headerRow.appendChild(habitHeader);
+
     days.forEach((day) => {
       const th = document.createElement("th");
       th.textContent = day;
       th.className = "time";
       headerRow.appendChild(th);
     });
-  }
 
-  table.appendChild(headerRow);
+    table.appendChild(headerRow);
 
-  // Habit rows
-  for (let i = 0; i < habitCount; i++) {
-    const row = document.createElement("tr");
+    // Habit rows
+    for (let i = 0; i < habitCount; i++) {
+      const row = document.createElement("tr");
 
-    const habitCell = document.createElement("td");
-    habitCell.className = "time";
-    habitCell.textContent = `Habit ${i + 1}`;
-    row.appendChild(habitCell);
+      const habitCell = document.createElement("td");
+      habitCell.className = "habit-name-cell";
+      habitCell.textContent = ""; // blank for user to write
+      row.appendChild(habitCell);
 
-    for (let d = 0; d < totalDays; d++) {
-      const cell = document.createElement("td");
-      cell.className = "slot";
-      row.appendChild(cell);
+      days.forEach(() => {
+        const cell = document.createElement("td");
+        cell.className = "habit-checkbox";
+        row.appendChild(cell);
+      });
+
+      table.appendChild(row);
     }
 
-    table.appendChild(row);
+    page.appendChild(table);
   }
 
-  page.appendChild(table);
   preview.appendChild(page);
-
   document.getElementById("downloadBtn").classList.remove("hidden");
 }
 
@@ -81,10 +84,5 @@ function downloadPDF() {
   const preview = document.getElementById("previewArea");
   const page = preview.querySelector(".planner-page");
 
-  html2canvas(page, { scale: 2 }).then((canvas) => {
-    const imgData = canvas.toDataURL("image/png");
-    const pdf = new jspdf.jsPDF("p", "pt", "letter");
-    pdf.addImage(imgData, "PNG", 0, 0, 612, 792);
-    pdf.save("habit-tracker.pdf");
-  });
+  html2pdf().from(page).save("habit-tracker.pdf");
 }
