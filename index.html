@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <img src="logo.png" class="logo" alt="MicroPlan Studio" />
+    </header>
+
+    <main>
+      <h2>Create Your Habit Tracker</h2>
+
+      <div class="controls">
+        <label>
+          Number of habits:
+          <input type="number" id="habitCount" min="1" max="20" value="6" />
+        </label>
+
+        <label>
+          Weeks:
+          <select id="weekCount">
+            <option value="1">1 week</option>
+            <option value="2">2 weeks</option>
+            <option value="4" selected>4 weeks</option>
+          </select>
+        </label>
+
+        <button id="generateBtn">Generate</button>
+      </div>
+
+      <div id="previewArea"></div>
+
+      <button id="downloadBtn" class="hidden">Download PDF</button>
+
+      <div class="upsell-banner">
+        Want more planners? Visit the
+        <a href="https://microplanstudio.com">MicroPlan Studio homepage</a>.
+      </div>
+    </main>
+
+    <footer>© 2026 MicroPlan Studio</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
