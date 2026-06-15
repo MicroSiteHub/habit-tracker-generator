@@ -69,20 +69,6 @@ footer {
   color: #666;
 }
 
-.upsell-banner {
-  margin: 40px;
-  padding: 16px;
-  background: #eef4ff;
-  border: 1px solid #cdddfc;
-  text-align: center;
-  border-radius: 6px;
-}
-
-.upsell-banner a {
-  color: #4a6fa5;
-  font-weight: 600;
-}
-
 .planner-page {
   width: 8.5in;
   height: 11in;
@@ -178,7 +164,7 @@ h2 {
 }
 
 .related-tools {
-  margin: 40px;
+  margin-top: 40px;
   padding: 20px;
   background: #eef4ff;
   border: 1px solid #cdddfc;
@@ -204,8 +190,23 @@ h2 {
   color: #4a6fa5;
   font-weight: 600;
 }
+
+.upsell-banner {
+  margin-top: 40px;
+  padding: 16px;
+  background: #eef4ff;
+  border: 1px solid #cdddfc;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.upsell-banner a {
+  color: #4a6fa5;
+  font-weight: 600;
+}
+
 .seo-text {
-  margin: 40px;
+  margin-top: 40px;
   padding: 20px 24px;
   background: #ffffff;
   border: 1px solid #e0e0e0;
