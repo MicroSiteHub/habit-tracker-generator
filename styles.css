@@ -63,10 +63,22 @@ button.hidden {
 
 footer {
   margin-top: 60px;
-  padding: 20px;
+  padding: 20px 20px 4px 20px;
   text-align: center;
   font-size: 14px;
   color: #666;
+}
+
+.legal-links {
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 40px;
+  font-size: 13px;
+  color: #666;
+}
+
+.legal-links a {
+  color: #4a6fa5;
 }
 
 .planner-page {
@@ -246,14 +258,4 @@ h2 {
 .seo-text p {
   margin: 12px 0;
   font-size: 16px;
-}
-
-.legal-links {
-  margin-top: 10px;
-  font-size: 13px;
-  color: #666;
-}
-
-.legal-links a {
-  color: #4a6fa5;
 }
