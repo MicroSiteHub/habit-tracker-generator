@@ -156,11 +156,12 @@ h2 {
   margin-bottom: 20px;
 }
 
-.schedule-table .header {
+.schedule-table .time {
   width: 60px;
   border: 1px solid #ccc;
   padding: 4px;
   font-size: 14px;
+  text-align: right;
 }
 
 .schedule-table .slot {
@@ -172,29 +173,6 @@ h2 {
   border: 1px solid #ccc;
   height: 180px;
   margin-top: 10px;
-}
-
-.habit-name-cell {
-  border: 1px solid #ccc;
-  width: 140px;
-  padding: 4px;
-  font-size: 14px;
-}
-
-.habit-day-cell {
-  border: 1px solid #ccc;
-  width: 20px;
-  height: 20px;
-  text-align: center; /* horizontal centering */
-  vertical-align: middle; /* vertical centering */
-}
-
-.habit-checkbox {
-  border: 1px solid #666;
-  width: 12px;
-  height: 12px;
-  display: inline-block; /* works with text-align: center */
-  margin-top: 4px; /* adjust as needed for vertical centering */
 }
 
 .related-tools {
@@ -210,19 +188,33 @@ h2 {
   font-size: 18px;
 }
 
-.related-tools ul {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
-}
-
-.related-tools li {
-  margin: 6px 0;
-}
-
 .related-tools a {
-  color: #4a6fa5;
+  color: #4f46e5;
   font-weight: 600;
+  text-decoration: none;
+}
+
+.related-tools a:hover {
+  color: #4338ca;
+  text-decoration: underline;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.related-grid a {
+  color: #4a6fa5;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.related-grid a:hover {
+  text-decoration: underline;
 }
 
 .upsell-banner {
