@@ -218,17 +218,37 @@ h2 {
 }
 
 .upsell-banner {
-  margin-top: 40px;
-  padding: 16px;
   background: #eef4ff;
   border: 1px solid #cdddfc;
-  text-align: center;
+  padding: 14px 18px;
   border-radius: 6px;
+  margin-top: 30px;
+}
+
+.upsell-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.upsell-inner span {
+  line-height: 1.4;
+}
+
+.upsell-logo {
+  width: 100px; /* adjust to taste */
+  height: auto;
+  display: block;
 }
 
 .upsell-banner a {
-  color: #4a6fa5;
+  color: #4f46e5; /* indigo-600 */
   font-weight: 600;
+  text-decoration: none;
+}
+
+.upsell-banner a:hover {
+  text-decoration: underline;
 }
 
 .seo-text {
