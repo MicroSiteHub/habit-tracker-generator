@@ -1,57 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Habit Tracker Generator — Free Printable PDF | MicroPlan Studio
-    </title>
-    <meta
-      name="description"
-      content="Generate a free printable habit tracker PDF in seconds. Simple layout, configurable number of tasks and weeks. No signup required — fast, clean, and ready to print."
-    />
-
-    <meta
-      property="og:title"
-      content="Habit Tracker Generator — Free Printable PDF"
-    />
-    <meta
-      property="og:description"
-      content="Create a simple, printable habit tracker PDF in seconds. No signup required."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://habits.microplanstudio.com" />
-    <meta
-      property="og:image"
-      content="https://habits.microplanstudio.com/assets/og-image.png"
-    />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Habit Tracker Generator — Free Printable PDF"
-    />
-    <meta
-      name="twitter:description"
-      content="Create a simple, printable habit tracker PDF in seconds."
-    />
-    <meta
-      name="twitter:image"
-      content="https://habits.microplanstudio.com/assets/og-image.png"
-    />
-
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/png" href="assets/favicon.png" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-    <script type="application/ld+json">
-      {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Habit Tracker Generator — Free Printable PDF | MicroPlan Studio
+  </title>
+  <meta content="Generate a printable habit tracker PDF for daily and weekly habits." name="description"/>
+  <!-- Open Graph -->
+  <meta content="Habit Tracker Generator — Free Printable PDF" property="og:title"/>
+  <meta content="Create a simple, printable habit tracker PDF in seconds." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="https://habits.microplanstudio.com" property="og:url"/>
+  <meta content="https://habits.microplanstudio.com/assets/og-image.png" property="og:image"/>
+  <!-- Twitter -->
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Habit Tracker Generator — Free Printable PDF" name="twitter:title"/>
+  <meta content="Create a simple, printable habit tracker PDF in seconds." name="twitter:description"/>
+  <meta content="https://habits.microplanstudio.com/assets/og-image.png" name="twitter:image"/>
+  <link href="https://microplanstudio.com/generator-styles.css" rel="stylesheet"/>
+  <link href="assets/favicon.png" rel="icon" type="image/png"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js">
+  </script>
+  <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5861292512968172">
+  </script>
+  <!-- Schema -->
+  <script type="application/ld+json">
+   {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Habit Tracker Generator",
         "applicationCategory": "Productivity",
         "operatingSystem": "Web",
-        "description": "Generate a free printable habit tracker PDF in seconds.",
+        "description": "Generate a printable habit tracker PDF for daily and weekly habits.",
         "url": "https://habits.microplanstudio.com",
         "image": "https://habits.microplanstudio.com/assets/og-image.png",
         "author": {
@@ -59,103 +40,128 @@
           "name": "MicroPlan Studio"
         }
       }
-    </script>
-  </head>
-
-  <body>
-    <header>
-      <img src="assets/logo.png" class="logo" alt="MicroPlan Studio" />
-    </header>
-
-    <main>
-      <h1>Habit Tracker Generator</h1>
-      <p>Create a simple, printable habit tracker in seconds.</p>
-
-      <h2>Create Your Habit Tracker</h2>
-
-      <div class="controls">
-        <label>
-          Options:
-          <select id="habitCount">
-            <option value="6" selected>6 habits over 3 weeks</option>
-            <option value="12">12 habits over 2 weeks</option>
-            <option value="18">18 habits over 1 week</option>
-          </select>
-        </label>
-
-        <button id="generateBtn">Generate</button>
-      </div>
-
-      <h2>Planner Preview</h2>
-
-      <div id="previewArea"></div>
-
-      <button id="downloadBtn" class="hidden">Download PDF</button>
-
-      <!-- Upsell -->
-      <div class="upsell-banner">
-        <div class="upsell-inner">
-          <img
-            src="assets/SystemCraftLogo.png"
-            alt="SystemCraft AI Studio"
-            class="upsell-logo"
-          />
-          <span>
-            Want premium planners? Visit
-            <a
-              href="https://www.etsy.com/shop/SystemCraftAIStudio"
-              target="_blank"
-            >
-              SystemCraft AI Studio
-            </a>
-            for beautifully designed, customizable planner templates!
-          </span>
-        </div>
-      </div>
-
-      <!-- Related Tools -->
-      <section class="related-tools">
-        <h2>More Free Planner Tools</h2>
-        <ul class="related-grid">
-          <!-- 4 related tools -->
-          <li>
-            <a href="https://fitness.microplanstudio.com">Fitness Planner</a>
-          </li>
-          <li><a href="https://water.microplanstudio.com">Water Tracker</a></li>
-          <li><a href="https://sleep.microplanstudio.com">Sleep Tracker</a></li>
-          <li><a href="https://mood.microplanstudio.com">Mood Tracker</a></li>
-
-          <!-- 2 cross-category tools -->
-          <li><a href="https://daily.microplanstudio.com">Daily Planner</a></li>
-          <li><a href="https://study.microplanstudio.com">Study Planner</a></li>
-        </ul>
-        <a href="https://microplanstudio.com">All Planner Tools</a>
-      </section>
-
-      <!-- SEO Text -->
-      <section class="seo-text">
-        <h2>Free Habit Tracker Generator</h2>
-        <p>
-          This free habit tracker generator helps you create a clean, printable
-          PDF habit tracker in seconds. Perfect for productivity, students, work
-          planning, and personal organization.
-        </p>
-
-        <p>No signup required — just generate, download, and print.</p>
-      </section>
-    </main>
-
-    <footer>© 2026 MicroPlan Studio — Free planner tools</footer>
-    <div class="legal-links">
-      <a href="https://microplanstudio.com/privacy-policy.html"
-        >Privacy Policy</a
-      >
-      •
-      <a href="https://microplanstudio.com/terms-of-service.html"
-        >Terms of Service</a
-      >
+  </script>
+ </head>
+ <body>
+  <header>
+   <img alt="MicroPlan Studio" class="logo" src="assets/logo.png"/>
+  </header>
+  <main>
+   <h1>
+    Habit Tracker Generator
+   </h1>
+   <p>
+    Track habits and build consistency.
+   </p>
+   <h2>
+    Create Your Habit Tracker
+   </h2>
+   <div class="controls">
+    <label>
+     Options:
+     <select id="habitCount">
+      <option selected="" value="6">
+       6 habits over 3 weeks
+      </option>
+      <option value="12">
+       12 habits over 2 weeks
+      </option>
+      <option value="18">
+       18 habits over 1 week
+      </option>
+     </select>
+    </label>
+   </div>
+   <button id="generateBtn">
+    Generate
+   </button>
+   <h2>
+    Preview
+   </h2>
+   <div id="previewArea">
+   </div>
+   <button class="hidden" id="downloadBtn">
+    Download PDF
+   </button>
+   <div class="upsell-banner">
+    <div class="upsell-inner">
+     <img alt="SystemCraft AI Studio" class="upsell-logo" src="assets/SystemCraftLogo.png"/>
+     <span>
+      Want premium planners? Visit
+      <a href="https://www.etsy.com/shop/SystemCraftAIStudio" target="_blank">
+       SystemCraft AI Studio
+      </a>
+      for beautifully designed, customizable planner templates!
+     </span>
     </div>
-
-    <script src="script.js"></script>
-  </body>
+   </div>
+   <section class="related-tools">
+    <h2>
+     More Free Planner Tools
+    </h2>
+    <ul class="related-grid">
+     <li>
+      <a href="https://fitness.microplanstudio.com">
+       Fitness Planner
+      </a>
+     </li>
+     <li>
+      <a href="https://water.microplanstudio.com">
+       Water Tracker
+      </a>
+     </li>
+     <li>
+      <a href="https://sleep.microplanstudio.com">
+       Sleep Tracker
+      </a>
+     </li>
+     <li>
+      <a href="https://mood.microplanstudio.com">
+       Mood Tracker
+      </a>
+     </li>
+     <li>
+      <a href="https://daily.microplanstudio.com">
+       Daily Planner
+      </a>
+     </li>
+     <li>
+      <a href="https://study.microplanstudio.com">
+       Study Planner
+      </a>
+     </li>
+    </ul>
+    <div class="all-tools-wrapper" style="text-align: center; margin-top: 12px">
+     <a class="all-tools-link" href="https://microplanstudio.com">
+      All Planner Tools
+     </a>
+    </div>
+   </section>
+   <section class="seo-text">
+    <h2>
+     Free Habit Tracker Generator
+    </h2>
+    <p>
+     This free habit tracker generator helps you build consistency and track progress.
+    </p>
+    <p>
+     Perfect for personal development, wellness, and productivity.
+    </p>
+   </section>
+  </main>
+  <footer>
+   © 2026 MicroPlan Studio — Free planner tools
+  </footer>
+  <div class="legal-links">
+   <a href="https://microplanstudio.com/privacy-policy.html">
+    Privacy Policy
+   </a>
+   •
+   <a href="https://microplanstudio.com/terms-of-service.html">
+    Terms of Service
+   </a>
+  </div>
+  <script src="script.js">
+  </script>
+ </body>
 </html>
