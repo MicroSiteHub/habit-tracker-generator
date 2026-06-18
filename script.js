@@ -60,16 +60,16 @@ function generateTracker() {
       const row = document.createElement("tr");
 
       const habitCell = document.createElement("td");
-      habitCell.className = "habit-name-cell";
+      habitCell.className = "schedule-name-cell";
       habitCell.textContent = ""; // blank for user to write
       row.appendChild(habitCell);
 
       days.forEach(() => {
         const cell = document.createElement("td");
-        cell.className = "habit-day-cell";
+        cell.className = "schedule-day-cell";
         row.appendChild(cell);
         const checkbox = document.createElement("div");
-        checkbox.className = "habit-checkbox";
+        checkbox.className = "schedule-checkbox";
         cell.appendChild(checkbox);
       });
 
