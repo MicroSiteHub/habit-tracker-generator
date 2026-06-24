@@ -4,24 +4,25 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
-   Habit Tracker Generator — Free Printable PDF | MicroPlan Studio
+   Habit Tracker Generator • Free Printable PDF | MicroPlan Studio
   </title>
   <meta content="Generate a printable habit tracker PDF for daily and weekly habits." name="description"/>
   <!-- Open Graph -->
-  <meta content="Habit Tracker Generator — Free Printable PDF" property="og:title"/>
+  <meta content="Habit Tracker Generator • Free Printable PDF" property="og:title"/>
   <meta content="Create a simple, printable habit tracker PDF in seconds." property="og:description"/>
   <meta content="website" property="og:type"/>
   <meta content="https://habits.microplanstudio.com" property="og:url"/>
   <meta content="https://habits.microplanstudio.com/assets/og-image.png" property="og:image"/>
   <!-- Twitter -->
   <meta content="summary_large_image" name="twitter:card"/>
-  <meta content="Habit Tracker Generator — Free Printable PDF" name="twitter:title"/>
+  <meta content="Habit Tracker Generator • Free Printable PDF" name="twitter:title"/>
   <meta content="Create a simple, printable habit tracker PDF in seconds." name="twitter:description"/>
   <meta content="https://habits.microplanstudio.com/assets/og-image.png" name="twitter:image"/>
   <link href="https://microplanstudio.com/generator-styles.css" rel="stylesheet"/>
   <link href="assets/favicon.png" rel="icon" type="image/png"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js">
   </script>
+  <!-- Google AdSense -->
   <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5861292512968172">
   </script>
   <!-- Schema -->
@@ -41,6 +42,10 @@
         }
       }
   </script>
+  <!-- Cloudflare Web Analytics -->
+  <script data-cf-beacon='{"token": "8633d47eb3dc4e5fa2180aa020f47c52"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js">
+  </script>
+  <!-- End Cloudflare Web Analytics -->
  </head>
  <body>
   <header>
@@ -162,6 +167,25 @@
    </a>
   </div>
   <script src="script.js">
+  </script>
+  <!-- Custom Event Tracking -->
+  <script>
+   document.addEventListener("DOMContentLoaded", () => {
+        const gen = document.getElementById("generateBtn");
+        const dl = document.getElementById("downloadBtn");
+
+        if (gen) {
+          gen.addEventListener("click", () => {
+            if (window.cf_beacon) window.cf_beacon("generate_clicked");
+          });
+        }
+
+        if (dl) {
+          dl.addEventListener("click", () => {
+            if (window.cf_beacon) window.cf_beacon("download_clicked");
+          });
+        }
+      });
   </script>
  </body>
 </html>
