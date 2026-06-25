@@ -25,6 +25,17 @@
   <!-- Google AdSense -->
   <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5861292512968172">
   </script>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-P54QP62CXN">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-P54QP62CXN");
+  </script>
   <!-- Schema -->
   <script type="application/ld+json">
    {
@@ -177,12 +188,20 @@
         if (gen) {
           gen.addEventListener("click", () => {
             if (window.cf_beacon) window.cf_beacon("generate_clicked");
+            gtag("event", "generate_clicked", {
+              event_category: "interaction",
+              event_label: "Habit Tracker",
+            });
           });
         }
 
         if (dl) {
           dl.addEventListener("click", () => {
             if (window.cf_beacon) window.cf_beacon("download_clicked");
+            gtag("event", "download_clicked", {
+              event_category: "interaction",
+              event_label: "Habit Tracker",
+            });
           });
         }
       });
